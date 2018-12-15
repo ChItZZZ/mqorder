@@ -1,0 +1,26 @@
+pagehelper:
+  helperDialect: mysql
+  params: count=countSql
+  reasonable: true
+  supportMethodsArguments: true
+
+server:
+  port: 9999
+
+spring:
+  aop:
+    auto: true
+    proxy-target-class: false
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: 123
+    url: jdbc:mysql://localhost:3306/spring_guide?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false
+    username: root
+  devtools:
+    restart:
+      additional-paths: src/main/java
+      enabled: true
+  rabbitmq:
+    host: localhost
+    username: guest
+    password: guest
