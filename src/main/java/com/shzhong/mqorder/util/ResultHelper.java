@@ -1,6 +1,8 @@
 package com.shzhong.mqorder.util;
 
 
+import com.shzhong.mqorder.domain.ResponseEnum;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,6 +27,13 @@ public class ResultHelper {
         Map<String, Object> obj = new HashMap<String, Object>();
         obj.put("error", error);
         obj.put("msg", msg);
+        return obj;
+    }
+
+    public static Object fail(ResponseEnum responseEnum) {
+        Map<String, Object> obj = new HashMap<String, Object>();
+        obj.put("error", responseEnum.getCode());
+        obj.put("msg", responseEnum.getMsg());
         return obj;
     }
 

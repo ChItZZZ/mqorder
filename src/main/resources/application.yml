@@ -25,8 +25,19 @@ spring:
     username: guest
     password: guest
     port: 5672
+  redis:
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 10
+        min-idle: 5
+        max-active: 10
+  session:
+    store-type: redis
 
 rabbitmq:
   queue:
     name:
       cancelOrder: '"cancelOrderQueue"'
+
