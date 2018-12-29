@@ -4,6 +4,9 @@ import com.shzhong.mqorder.domain.ResponseEnum;
 import com.shzhong.mqorder.service.UserService;
 import com.shzhong.mqorder.util.JacksonUtil;
 import com.shzhong.mqorder.util.ResultHelper;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,6 +17,7 @@ import java.util.Date;
 
 @Component
 @RequestMapping("/user")
+@Api(value = "用户接口", tags = { "用户管理相关接口" })
 @RestController
 @Slf4j
 public class UserController {
@@ -23,6 +27,8 @@ public class UserController {
 
     @PostMapping("/login")
     @ResponseBody
+    @ApiOperation(value = "通过账号密码查询用户进行登录", notes = "查询用户")
+    @ApiResponse(code = 200, message = "success")
     public Object login(@RequestBody(required = false) String body){
 
         String username = JacksonUtil.parseString(body,"username");

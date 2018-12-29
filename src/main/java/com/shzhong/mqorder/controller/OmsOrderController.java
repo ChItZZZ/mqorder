@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 @RequestMapping("/order")
@@ -42,9 +43,8 @@ public class OmsOrderController {
     }
 
     @PostMapping("/cancel")
-    @ResponseBody
-    public Object cancelOrder(@RequestBody Long orderId) {
-        omsOrderService.sendDelayMessageCancelOrder(orderId);
+    public Object cancelOrder(@RequestParam(defaultValue = "0") String orderId) {
+        omsOrderService.sendDelayMessageCancelOrder(Long.valueOf(orderId));
         return ResultHelper.ok();
     }
 }
