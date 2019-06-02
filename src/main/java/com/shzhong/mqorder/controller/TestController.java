@@ -2,7 +2,9 @@ package com.shzhong.mqorder.controller;
 
 import com.shzhong.mqorder.domain.DemoReq;
 import com.shzhong.mqorder.util.R;
+import com.shzhong.mqorder.util.SpringContextUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,10 +16,12 @@ import java.util.Map;
 public class TestController {
 
     @GetMapping("/demo")
-    public Object testDemo(String name, Integer age) {
+    public Object testDemo(Integer age) {
         // query string
-        log.info(name);
-        log.info(age.toString());
+        System.out.println("age = " + age);
+        ApplicationContext context = SpringContextUtil.getApplicationContext();
+        Object config = context.getBean("rabbitMqConfig");
+        log.info("config,{}", config);
         return R.ok();
     }
 
