@@ -3,7 +3,7 @@ package com.shzhong.mqorder.controller;
 import com.shzhong.mqorder.domain.ResponseEnum;
 import com.shzhong.mqorder.service.UserService;
 import com.shzhong.mqorder.util.JacksonUtil;
-import com.shzhong.mqorder.util.ResultHelper;
+import com.shzhong.mqorder.util.R;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -17,7 +17,7 @@ import java.util.Date;
 
 @Component
 @RequestMapping("/user")
-@Api(value = "用户接口", tags = { "用户管理相关接口" })
+@Api(value = "用户接口", tags = {"用户管理相关接口"})
 @RestController
 @Slf4j
 public class UserController {
@@ -29,20 +29,20 @@ public class UserController {
     @ResponseBody
     @ApiOperation(value = "通过账号密码查询用户进行登录", notes = "查询用户")
     @ApiResponse(code = 200, message = "success")
-    public Object login(@RequestBody(required = false) String body){
+    public Object login(@RequestBody(required = false) String body) {
 
-        String username = JacksonUtil.parseString(body,"username");
-        String password = JacksonUtil.parseString(body,"password");
+        String username = JacksonUtil.parseString(body, "username");
+        String password = JacksonUtil.parseString(body, "password");
 
-        if(userService.checkAuth(username, password)){
-            return ResultHelper.ok();
+        if (userService.checkAuth(username, password)) {
+            return R.ok();
         }
-        return ResultHelper.fail(ResponseEnum.NO_AUTH);
+        return R.fail(ResponseEnum.NO_AUTH);
     }
 
     @GetMapping("/test")
-    public Object test(@RequestBody String body){
-        return ResultHelper.ok(body);
+    public Object test(@RequestBody String body) {
+        return R.ok(body);
     }
 
     @RequestMapping("/session/set")

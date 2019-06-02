@@ -35,9 +35,19 @@ spring:
         max-active: 10
   session:
     store-type: redis
+  security:
+    user:
+      name: admin
+      password: admin
+      roles: admin
 
 rabbitmq:
   queue:
     name:
       cancelOrder: '"cancelOrderQueue"'
+
+mybatis:
+  mapper-locations:
+    - classpath:dao/*.xml
+    - classpath*:com/**/mapper/*.xml
 

@@ -6,7 +6,7 @@ import com.shzhong.mqorder.domain.ResponseEnum;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ResultHelper {
+public class R {
 
     public static Object ok() {
         Map<String, Object> obj = new HashMap<String, Object>();

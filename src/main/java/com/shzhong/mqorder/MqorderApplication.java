@@ -4,8 +4,8 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = {"com.shzhong.mqorder"})
-@MapperScan("com.shzhong.mqorder.mapper")
+@SpringBootApplication
+@MapperScan({"com.shzhong.mqorder.mapper"}) // this is mapper java client location，and mapper xml in yml config
 public class MqorderApplication {
 
     public static void main(String[] args) {

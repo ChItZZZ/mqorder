@@ -1,7 +1,13 @@
 package com.shzhong.mqorder.domain;
 
-import java.util.Date;
+import lombok.Data;
+import org.springframework.boot.convert.DataSizeUnit;
 
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
+@Data
 public class User {
     private Integer id;
 
@@ -13,43 +19,15 @@ public class User {
 
     private Date createTime;
 
-    public Integer getId() {
-        return id;
-    }
+    private Long uid;       // 用户id
+    private String uname;   // 登录名，不可改
+    private String nick;    // 用户昵称，可改
+    private String pwd;     // 已加密的登录密码
+    private String salt;    // 加密盐值
+    private Date created;   // 创建时间
+    private Date updated;   // 修改时间
+    private Set<String> roles = new HashSet<>();    //用户所有角色值，用于shiro做角色权限的判断
+    private Set<String> perms = new HashSet<>();    //用户所有权限值，用于shiro做资源权限的判断
+    //getters and setters...
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Long getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(Long uuid) {
-        this.uuid = uuid;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
 }

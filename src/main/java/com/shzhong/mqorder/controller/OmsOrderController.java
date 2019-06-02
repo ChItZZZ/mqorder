@@ -2,14 +2,13 @@ package com.shzhong.mqorder.controller;
 
 import com.shzhong.mqorder.domain.OmsOrder;
 import com.shzhong.mqorder.service.OmsOrderService;
-import com.shzhong.mqorder.util.ResultHelper;
+import com.shzhong.mqorder.util.R;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 @RequestMapping("/order")
@@ -28,7 +27,7 @@ public class OmsOrderController {
 
 
         List<OmsOrder> list = omsOrderService.selectByExample(pageNum, pageSize, sort, order);
-        return ResultHelper.ok(list);
+        return R.ok(list);
 
     }
 
@@ -45,6 +44,6 @@ public class OmsOrderController {
     @PostMapping("/cancel")
     public Object cancelOrder(@RequestParam(defaultValue = "0") String orderId) {
         omsOrderService.sendDelayMessageCancelOrder(Long.valueOf(orderId));
-        return ResultHelper.ok();
+        return R.ok();
     }
 }

@@ -1,10 +1,11 @@
 package com.shzhong.mqorder.controller;
 
 import com.shzhong.mqorder.domain.DemoReq;
-import com.shzhong.mqorder.util.ResultHelper;
+import com.shzhong.mqorder.util.R;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @RequestMapping("/test")
@@ -14,9 +15,10 @@ public class TestController {
 
     @GetMapping("/demo")
     public Object testDemo(String name, Integer age) {
+        // query string
         log.info(name);
         log.info(age.toString());
-        return ResultHelper.ok();
+        return R.ok();
     }
 
     @PostMapping("/demo1")
@@ -24,7 +26,7 @@ public class TestController {
         //application/json
         log.info(demoReq.get("name").toString());
         log.info(demoReq.get("age").toString());
-        return ResultHelper.ok(demoReq);
+        return R.ok(demoReq);
     }
 
     @PostMapping("/demo2")
@@ -32,7 +34,7 @@ public class TestController {
         //application/json
         System.out.println(demoReq);
         System.out.println(demoReq.getName());
-        return ResultHelper.ok(demoReq);
+        return R.ok(demoReq);
     }
 
 
@@ -41,6 +43,24 @@ public class TestController {
         //解析x-www-form-urlencoded
         log.info(name);
         log.info(age.toString());
-        return ResultHelper.ok();
+        return R.ok();
     }
+
+
+    @GetMapping("main")
+    public Object demo4(HttpServletRequest request) {
+        // get query string
+        String name = request.getParameter("name");
+        System.out.println(name);
+        return R.ok();
+    }
+
+    @PostMapping("post")
+    public Object demo5(HttpServletRequest request) {
+        // 解析x-www-form-urlencoded
+        String name = request.getParameter("name");
+        System.out.println(name);
+        return R.ok();
+    }
+
 }
