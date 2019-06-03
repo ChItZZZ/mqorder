@@ -1,8 +1,6 @@
 package com.shzhong.mqorder.util;
 
 
-import com.shzhong.mqorder.domain.ResponseEnum;
-
 import java.util.HashMap;
 import java.util.Map;
 

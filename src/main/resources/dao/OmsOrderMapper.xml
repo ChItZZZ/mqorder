@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shzhong.mqorder.mapper.OmsOrderMapper">
-  <resultMap id="BaseResultMap" type="com.shzhong.mqorder.domain.OmsOrder">
+  <resultMap id="BaseResultMap" type="com.shzhong.mqorder.entity.OmsOrder">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="order_id" jdbcType="VARCHAR" property="orderId" />
     <result column="uuid" jdbcType="BIGINT" property="uuid" />
@@ -69,7 +69,7 @@
   <sql id="Base_Column_List">
     id, order_id, uuid, price, create_time
   </sql>
-  <select id="selectByExample" parameterType="com.shzhong.mqorder.domain.OmsOrderExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.shzhong.mqorder.entity.OmsOrderExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -94,19 +94,19 @@
     delete from oms_order
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.shzhong.mqorder.domain.OmsOrderExample">
+  <delete id="deleteByExample" parameterType="com.shzhong.mqorder.entity.OmsOrderExample">
     delete from oms_order
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.shzhong.mqorder.domain.OmsOrder">
+  <insert id="insert" parameterType="com.shzhong.mqorder.entity.OmsOrder">
     insert into oms_order (id, order_id, uuid, 
       price, create_time)
     values (#{id,jdbcType=INTEGER}, #{orderId,jdbcType=VARCHAR}, #{uuid,jdbcType=BIGINT}, 
       #{price,jdbcType=DECIMAL}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.shzhong.mqorder.domain.OmsOrder">
+  <insert id="insertSelective" parameterType="com.shzhong.mqorder.entity.OmsOrder">
     insert into oms_order
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -143,7 +143,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.shzhong.mqorder.domain.OmsOrderExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.shzhong.mqorder.entity.OmsOrderExample" resultType="java.lang.Long">
     select count(*) from oms_order
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -183,7 +183,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.shzhong.mqorder.domain.OmsOrder">
+  <update id="updateByPrimaryKeySelective" parameterType="com.shzhong.mqorder.entity.OmsOrder">
     update oms_order
     <set>
       <if test="orderId != null">
@@ -201,7 +201,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.shzhong.mqorder.domain.OmsOrder">
+  <update id="updateByPrimaryKey" parameterType="com.shzhong.mqorder.entity.OmsOrder">
     update oms_order
     set order_id = #{orderId,jdbcType=VARCHAR},
       uuid = #{uuid,jdbcType=BIGINT},

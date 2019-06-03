@@ -1,6 +1,6 @@
 package com.shzhong.mqorder.component;
 
-import com.shzhong.mqorder.domain.QueueEnum;
+import com.shzhong.mqorder.util.QueueEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

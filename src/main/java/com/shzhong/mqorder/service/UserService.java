@@ -1,7 +1,7 @@
 package com.shzhong.mqorder.service;
 
-import com.shzhong.mqorder.domain.User;
-import com.shzhong.mqorder.domain.UserExample;
+import com.shzhong.mqorder.entity.User;
+import com.shzhong.mqorder.entity.UserExample;
 import com.shzhong.mqorder.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

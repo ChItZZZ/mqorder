@@ -2,8 +2,8 @@ package com.shzhong.mqorder.service;
 
 import com.github.pagehelper.PageHelper;
 import com.shzhong.mqorder.component.CancelOrderSender;
-import com.shzhong.mqorder.domain.OmsOrder;
-import com.shzhong.mqorder.domain.OmsOrderExample;
+import com.shzhong.mqorder.entity.OmsOrder;
+import com.shzhong.mqorder.entity.OmsOrderExample;
 import com.shzhong.mqorder.mapper.OmsOrderMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

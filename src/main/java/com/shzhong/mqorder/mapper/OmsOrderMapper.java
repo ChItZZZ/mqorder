@@ -1,7 +1,7 @@
 package com.shzhong.mqorder.mapper;
 
-import com.shzhong.mqorder.domain.OmsOrder;
-import com.shzhong.mqorder.domain.OmsOrderExample;
+import com.shzhong.mqorder.entity.OmsOrder;
+import com.shzhong.mqorder.entity.OmsOrderExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

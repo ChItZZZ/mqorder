@@ -1,4 +1,4 @@
-package com.shzhong.mqorder.domain;
+package com.shzhong.mqorder.util;
 
 import lombok.Getter;
 

@@ -1,6 +1,6 @@
 package com.shzhong.mqorder.controller;
 
-import com.shzhong.mqorder.domain.OmsOrder;
+import com.shzhong.mqorder.entity.OmsOrder;
 import com.shzhong.mqorder.service.OmsOrderService;
 import com.shzhong.mqorder.util.R;
 import lombok.extern.slf4j.Slf4j;

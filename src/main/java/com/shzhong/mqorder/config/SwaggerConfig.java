@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 //http://localhost:9999/swagger-ui.html
 @Configuration
 @EnableSwagger2
-public class SwaggerConfiguration {
+public class SwaggerConfig {
 
 	@Bean
 	public Docket createRestApi() {

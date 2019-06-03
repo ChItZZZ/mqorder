@@ -1,6 +1,6 @@
 package com.shzhong.mqorder;
 
-import com.shzhong.mqorder.domain.OmsOrder;
+import com.shzhong.mqorder.entity.OmsOrder;
 import org.junit.Test;
 
 import java.util.HashMap;

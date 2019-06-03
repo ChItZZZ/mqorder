@@ -1,4 +1,4 @@
-package com.shzhong.mqorder.component;
+package com.shzhong.mqorder.config;
 
 import lombok.Data;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;

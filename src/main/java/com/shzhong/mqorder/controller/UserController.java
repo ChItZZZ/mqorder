@@ -1,6 +1,6 @@
 package com.shzhong.mqorder.controller;
 
-import com.shzhong.mqorder.domain.ResponseEnum;
+import com.shzhong.mqorder.util.ResponseEnum;
 import com.shzhong.mqorder.service.UserService;
 import com.shzhong.mqorder.util.JacksonUtil;
 import com.shzhong.mqorder.util.R;

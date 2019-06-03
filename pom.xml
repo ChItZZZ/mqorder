@@ -92,17 +92,10 @@
         <dependency>
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-data-redis</artifactId>
-            <exclusions>
-                <exclusion><!--不依赖Redis的异步客户端lettuce -->
-                    <groupId>io.lettuce</groupId>
-                    <artifactId>lettuce-core</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
-        <!-- redis clients -->
         <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
+            <groupId>io.lettuce</groupId>
+            <artifactId>lettuce-core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.session</groupId>

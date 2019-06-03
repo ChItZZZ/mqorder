@@ -1,6 +1,6 @@
 package com.shzhong.mqorder.controller;
 
-import com.shzhong.mqorder.domain.DemoReq;
+import com.shzhong.mqorder.dto.DemoDTO;
 import com.shzhong.mqorder.util.R;
 import com.shzhong.mqorder.util.SpringContextUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -34,11 +34,11 @@ public class TestController {
     }
 
     @PostMapping("/demo2")
-    public Object testDemo2(@RequestBody DemoReq demoReq) {
+    public Object testDemo2(@RequestBody DemoDTO demoDTO) {
         //application/json
-        System.out.println(demoReq);
-        System.out.println(demoReq.getName());
-        return R.ok(demoReq);
+        System.out.println(demoDTO);
+        System.out.println(demoDTO.getName());
+        return R.ok(demoDTO);
     }
 
 

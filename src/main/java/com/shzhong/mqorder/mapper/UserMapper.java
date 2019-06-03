@@ -1,7 +1,7 @@
 package com.shzhong.mqorder.mapper;
 
-import com.shzhong.mqorder.domain.User;
-import com.shzhong.mqorder.domain.UserExample;
+import com.shzhong.mqorder.entity.User;
+import com.shzhong.mqorder.entity.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
