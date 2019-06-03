@@ -12,8 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
+import java.util.Map;
 
 @Component
 @RequestMapping("/user")
@@ -26,14 +28,15 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/login")
-    @ResponseBody
     @ApiOperation(value = "通过账号密码查询用户进行登录", notes = "查询用户")
     @ApiResponse(code = 200, message = "success")
     public Object login(@RequestBody(required = false) String body) {
 
+        // application/json 这里必须要带有@RequestBody。另外可以map or dto接收
         String username = JacksonUtil.parseString(body, "username");
         String password = JacksonUtil.parseString(body, "password");
 
+        log.info("username {} password {}", username, password);
         if (userService.checkAuth(username, password)) {
             return R.ok();
         }
